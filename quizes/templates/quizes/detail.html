@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block scripts %}
+
+<script src="{% static 'quizes/quiz.js' %}" defer></script>
+
+{% endblock scripts %}
+
+{% block title %}{{object.name}}{% endblock title %}
+
+
+{% block content %}
+
+
+<div class="container text-center py-4">
+    <h1 class="">Quiz: {{object.name}}</h1>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="text-secondary my-auto" id="score-box">
+            <p>Required score: {{object.required_score}} %</p>
+        </div>
+    </div>
+    <div class="col text-end" id="timer-box">
+    </div>
+</div>
+
+<div class="py-3">
+    <a href="{% url 'quizes:quiz_list_view' %}" class="btn btn-danger" id="">
+        Go back
+    </a>
+</div>
+
+<form class="mt-3" id="quiz-form">
+    {% csrf_token %}
+    <div id="quiz-box" class="">
+    </div>
+    <div class="text-center py-3">
+        <button type="submit" class="mt-4 btn btn-primary btn-lg">Send</button>
+    </div>
+</form>
+
+<div id="result-box">
+
+</div>
+
+{% endblock content %}
