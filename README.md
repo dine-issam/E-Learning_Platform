@@ -461,7 +461,6 @@ Special thanks to:
   **Made with ❤️ by ESI-SBA Students**
   
   ⭐ Star us on GitHub if you find this project useful!
-  
-  ![Footer](docs/images/footer.png)
+
   
 </div>
